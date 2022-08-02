@@ -8,10 +8,14 @@ library(mice)
 library(survey)
 library(dplyr)
 
+
+
 directorio <- getwd()
 setwd(directorio)
 
-personas <- read_sav("encovi_personas2017_ds.sav") 
+personas <- read_sav("Data/encovi_personas2017_ds.sav") 
+
+hogares <- read_sav("Data/encovi_hogares2017_ds.sav")
 
 
 glimpse(personas)
