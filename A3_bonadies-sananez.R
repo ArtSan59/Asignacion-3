@@ -9,10 +9,6 @@ library(survey)
 library(dplyr)
 
 
-
-directorio <- getwd()
-setwd(directorio)
-
 personas <- read_sav("Data/encovi_personas2017_ds.sav") 
 
 hogares <- read_sav("Data/encovi_hogares2017_ds.sav")
@@ -40,9 +36,6 @@ id_total <- personas %>%
 
 imputables <- personas %>%
   filter((sit_econo == 1 | sit_econo == 2) & (ing_laboral == 99 | ing_laboral <= 0))
-  
-personas[sit_econo==98] <- NA
-
 
 donantes<- personas %>%
   filter((sit_econo == 1 | sit_econo == 2) & (ing_laboral != 99 | ing_laboral != 98 | ing_laboral != 0))%>%
